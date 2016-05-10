@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body ng-app="myApp">
+
+<div id="divelement">
+
+<h2>Weather Forecast Information</h2>
+
+<div ng-controller="mycontroller" class="form-group">
+
+<form class="form-inline">
+    <div class="form-group">
+    <label for="inp">Enter the ZipCode :</label>
+
+    <input type="text" ng-model="zipcode" id="inp" class="form-control" style="padding-left: 0%" >
+
+    <input type="button" class="btn btn-info" value="Get Weather Info" ng-click="weatherinfo(zipcode)">
+    </div>
+</form>
+
+<div ng-show="myValue">
+    <div class="form-group">
+        <div align="left">
+    <p>Weather Information for the <i>{{place}}</i></p>
+    <p>Current Condition <b>{{description}}  </b><img ng-src="{{image}}" style="width: 30px;height: 40px"></p>
+    <p> Temprature in  {{temp_celsius | number:0}}&#8451;</p>
+    <p>Speed of Wind {{wind}}</p>
+    </div>
+    </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
